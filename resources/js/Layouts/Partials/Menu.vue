@@ -31,16 +31,16 @@
                     data-widget="treeview"
                     role="menu"
                 >
+                
                     <li class="nav-item">
-                        <Link :href="route('home')" class="nav-link">
+                        <Link :href="route('niveauscolaire.index')" class="nav-link " :class="{ 'active':$page.component == 'NiveauScolaire/Index' }">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>Home</p>
+                            <p>Niveau Scolaire</p>
                         </Link>
                     </li>
 
-
-                    <li class="nav-item menu-open">
-                        <a class="nav-link active" href="#">
+                    <li class="nav-item " :class="{ 'menu-open':$page.component.startsWith('Etudiant/')  }">
+                        <a class="nav-link " href="#" :class="{ 'active':$page.component.startsWith('Etudiant/')  }">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Etudiant
@@ -49,16 +49,16 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
+                                <Link class="nav-link " :class="{ 'active':$page.component == 'Etudiant/Index' }" :href="route('etudiant.index')">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tous</p>
-                                </a>
+                                </Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <Link class="nav-link " :class="{ 'active':$page.component == 'Etudiant/Create' }" :href="route('etudiant.create')">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Nouveau</p>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
