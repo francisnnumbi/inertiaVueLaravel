@@ -32,7 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table(function(Bluepring $table){
+        Schema::table(function(Blueprint $table){
             $table ->dropConstrainedForeignId("niveau_scolaire_id");
         });
         Schema::dropIfExists('etudiants');
