@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(NiveauScolaireSeeder::class);
         // \App\Models\User::factory(10)->create();
+        \App\Models\Etudiant::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
